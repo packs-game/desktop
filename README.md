@@ -1,4 +1,4 @@
-#Heathstone.gg Desktop App
+#Packs Desktop App
 
 ##Install
 
