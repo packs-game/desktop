@@ -1,0 +1,46 @@
+<html>
+	<head></head>
+	<body>
+		<h1>UAI Launcher</h1>
+
+		Window Size
+		<br />
+		<select disabled>
+			<option value="1024x768">1024x768</option>
+			<option value="800x600">800x600</option>
+		</select>
+		<br />
+		<br />
+		<input type="checkbox" checked> Fullscreen
+		<br />
+		<br />
+		<button>Launch</button>
+
+		<script>
+			var checkbox = document.querySelectorAll('input')[0];
+			var select = document.querySelectorAll('select')[0];
+			document.querySelectorAll('button')[0].addEventListener('click', function() {
+				var ngui = require('nw.gui');
+			    var nwin = ngui.Window.get();
+
+				if (checkbox.checked) {
+				    nwin.enterFullscreen();
+				} else {
+					var res = select.value.split('x');
+					nwin.width = Number(res[0]);
+					nwin.height = Number(res[1]);
+				}
+
+				window.location = 'http://localhost:9000'
+			});
+			checkbox.addEventListener('change', function() {
+				console.log(checkbox)
+				if (checkbox.checked) {
+					select.disabled = 'disabled';
+				} else {
+					select.disabled = false;
+				}
+			});
+		</script>
+	</body>
+</html>

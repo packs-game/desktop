@@ -1,0 +1,16 @@
+{
+  "name": "UAI",
+  "main": "./src/index.html",
+  "window": {
+    "toolbar": false,
+    "width": 400,
+    "height": 600,
+    "show": true,
+    "min_width": 400,
+    "min_height": 300
+  },
+  "version": "0.1.0",
+  "dependencies": {
+  },
+  "chromium-args": "--ignore-certificate-errors"
+}
